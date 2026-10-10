@@ -1,6 +1,6 @@
 {
   "name": "freetheai",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Official JavaScript and TypeScript SDK for FreeTheAI, the free OpenAI-compatible AI API: chat, streaming, tool calls, web search, image and video tasks, with built-in retries, fallback models, and rate-limit handling.",
   "keywords": [
     "freetheai",
@@ -47,7 +47,12 @@
     },
     "./package.json": "./package.json"
   },
-  "files": ["dist", "README.md", "CHANGELOG.md", "LICENSE"],
+  "files": [
+    "dist",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
   "sideEffects": false,
   "engines": {
     "node": ">=18"
