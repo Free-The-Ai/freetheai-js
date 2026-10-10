@@ -1,7 +1,7 @@
 name: Release
 
 # Publishes to npm when a GitHub release is published. Uses npm trusted publishing
-# (OIDC, no stored token) with provenance. The tag must match package.json (v0.1.0).
+# (OIDC, with provenance) when configured; otherwise the NPM_TOKEN repository secret. The tag must match package.json (v0.1.0).
 # A version that is already on npm is skipped, so re-running a release is safe.
 on:
   release:
@@ -34,9 +34,14 @@ jobs:
       - run: npm test
       - run: npm run build
       - name: Publish unless this version is already on npm
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           if npm view "freetheai@${VERSION}" version >/dev/null 2>&1; then
             echo "freetheai@${VERSION} is already published; skipping."
+          elif [ -n "$NODE_AUTH_TOKEN" ]; then
+            # Token publish (NPM_TOKEN secret). Provenance needs the OIDC trusted publisher.
+            npm publish --access public
           else
             npm publish --provenance --access public
           fi
