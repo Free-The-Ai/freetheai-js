@@ -25,7 +25,7 @@ const tools: FunctionTool[] = [
 ];
 
 const messages: ChatMessage[] = [{ role: "user", content: "Is it raining in Paris?" }];
-const first = await client.chat.completions.create({ model: "fta/zai/glm-5.3", messages, tools });
+const first = await client.chat.completions.create({ model: "glm-5.3", messages, tools });
 const message = first.choices[0]!.message;
 messages.push(message);
 
@@ -35,7 +35,7 @@ for (const call of message.tool_calls ?? []) {
   messages.push({ role: "tool", tool_call_id: call.id, content: JSON.stringify(result) });
 }
 
-const final = await client.chat.completions.create({ model: "fta/zai/glm-5.3", messages, tools });
+const final = await client.chat.completions.create({ model: "glm-5.3", messages, tools });
 console.log(final.choices[0]?.message.content);
 ```
 

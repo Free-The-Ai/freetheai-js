@@ -10,7 +10,7 @@ All errors extend `FreeTheAIError`. API errors (`APIStatusError` and its subclas
 import { CheckinRequiredError, DailyLimitError, FreeTheAIError } from "freetheai";
 
 try {
-  await client.chat.completions.create({ model: "fta/zai/glm-5.3", messages });
+  await client.chat.completions.create({ model: "glm-5.3", messages });
 } catch (error) {
   if (error instanceof CheckinRequiredError) {
     console.log("Do the daily check-in:", error.checkinUrl);

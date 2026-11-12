@@ -32,7 +32,7 @@ Models with built-in search take `web_search_options: {}`; their sources come ba
 
 ```ts
 const reply = await client.chat.completions.create({
-  model: "fta/zai/glm-5.3",
+  model: "glm-5.3",
   messages: [{ role: "user", content: "What is the weather in Tokyo today?" }],
   web_search_options: {},
 });

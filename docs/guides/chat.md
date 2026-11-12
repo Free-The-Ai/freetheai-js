@@ -8,7 +8,7 @@ description: Chat completions with the FreeTheAI JavaScript SDK - messages, stre
 
 ```ts
 const reply = await client.chat.completions.create({
-  model: "fta/zai/glm-5.3",
+  model: "glm-5.3",
   messages: [{ role: "user", content: "Name three uses for a paperclip." }],
   temperature: 0.7,
   max_tokens: 400,
@@ -22,7 +22,7 @@ Any extra field is sent as it is, so every Chat Completions parameter works: `te
 
 ```ts
 for await (const text of client.chat.completions.streamText({
-  model: "fta/kimi/k3",
+  model: "kimi-k3",
   messages: [{ role: "user", content: "Tell me a short story." }],
 })) {
   process.stdout.write(text);
@@ -35,7 +35,7 @@ With `stream: true`, `create` resolves to an async iterable of `chat.completion.
 
 ```ts
 const stream = await client.chat.completions.create({
-  model: "fta/kimi/k3",
+  model: "kimi-k3",
   messages,
   stream: true,
 });
@@ -56,7 +56,7 @@ Thinking models return their reasoning in `message.reasoning_content` (and `delt
 
 ```ts
 const reply = await client.chat.completions.create({
-  model: "fta/zai/glm-5.3",
+  model: "glm-5.3",
   messages,
   reasoning_effort: "none",
 });
@@ -70,7 +70,7 @@ Models that read images take OpenAI-style content parts:
 
 ```ts
 const reply = await client.chat.completions.create({
-  model: "fta/zai/glm-5.3-flash",
+  model: "glm-5.3-flash",
   messages: [
     {
       role: "user",

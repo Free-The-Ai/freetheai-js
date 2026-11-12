@@ -39,7 +39,7 @@ function readEnv(name: string): string | undefined {
  *
  * const client = new FreeTheAI(); // reads FREETHEAI_API_KEY
  * const reply = await client.chat.completions.create({
- *   model: "fta/zai/glm-5.3",
+ *   model: "glm-5.3",
  *   messages: [{ role: "user", content: "Hello!" }],
  * });
  * console.log(reply.choices[0]?.message.content);

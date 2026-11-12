@@ -56,7 +56,7 @@ export interface UrlCitation {
 }
 
 export interface ChatCompletionCreateParams {
-  /** A model ID from `client.models.list()`, e.g. `fta/zai/glm-5.3`. */
+  /** A model ID from `client.models.list()`, e.g. `glm-5.3`. */
   model: string;
   messages: ChatMessage[];
   /** Models tried in order after this one fails. Overrides the client's list for this call. */

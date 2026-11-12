@@ -1,5 +1,5 @@
 site_name: FreeTheAI JavaScript SDK
-site_description: Official JavaScript and TypeScript SDK for FreeTheAI, the free OpenAI-compatible AI API. Chat, streaming, tool calls, web search, image and video tasks, with built-in retries and fallback models. Zero dependencies.
+site_description: Official JavaScript and TypeScript SDK for FreeTheAI, the AI model marketplace with one OpenAI-compatible API. Chat, streaming, tool calls, web search, image and video tasks, with built-in retries and fallback models. Zero dependencies.
 site_url: https://free-the-ai.github.io/freetheai-js/
 site_author: FreeTheAI
 repo_url: https://github.com/Free-The-Ai/freetheai-js

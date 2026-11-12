@@ -19,7 +19,7 @@
 
 # FreeTheAI JavaScript SDK
 
-The official JavaScript and TypeScript client for [FreeTheAI](https://freetheai.org), a free OpenAI-compatible AI API. One key gives you dozens of chat models, streaming, tool calls, web search with sourced answers, and image and video tasks. It has no runtime dependencies and runs on Node.js 18+, Bun, Deno, and modern browsers.
+The official JavaScript and TypeScript client for [FreeTheAI](https://freetheai.org), an AI model marketplace with one OpenAI-compatible API. One key reaches models from many providers, paid per token, with streaming, tool calls, web search with sourced answers, and image and video tasks. It has no runtime dependencies and runs on Node.js 18+, Bun, Deno, and modern browsers.
 
 ```bash
 npm install freetheai
@@ -27,7 +27,7 @@ npm install freetheai
 
 ## Quickstart
 
-Create a key at [freetheai.org](https://freetheai.org/dashboard/api-keys), do the [daily check-in](https://freetheai.org/checkin) for free models, and set `FREETHEAI_API_KEY`.
+Create a key at [freetheai.org](https://freetheai.org/dashboard/api-keys), add funds and follow a provider at [freetheai.org/providers](https://freetheai.org/providers), and set `FREETHEAI_API_KEY`.
 
 ```ts
 import { FreeTheAI } from "freetheai";
@@ -35,7 +35,7 @@ import { FreeTheAI } from "freetheai";
 const client = new FreeTheAI(); // reads FREETHEAI_API_KEY
 
 const reply = await client.chat.completions.create({
-  model: "fta/zai/glm-5.3",
+  model: "glm-5.3",
   messages: [{ role: "user", content: "Write a haiku about open models." }],
 });
 console.log(reply.choices[0]?.message.content);
@@ -45,7 +45,7 @@ Stream it:
 
 ```ts
 for await (const text of client.chat.completions.streamText({
-  model: "fta/kimi/k3",
+  model: "kimi-k3",
   messages: [{ role: "user", content: "Tell me a short story." }],
 })) {
   process.stdout.write(text);
@@ -71,7 +71,7 @@ Generic OpenAI clients treat every error the same. This one knows how the FreeTh
 - **Mistyped model IDs** come back with suggestions; a missing `fta/` prefix is fixed for you.
 
 ```ts
-const client = new FreeTheAI({ fallbackModels: ["fta/zai/glm-5.3-flash", "fta/mmx/minimax-m3"] });
+const client = new FreeTheAI({ fallbackModels: ["glm-5.3-flash", "minimax-m3"] });
 ```
 
 Read [Reliability](https://free-the-ai.github.io/freetheai-js/reliability/) for the full list.
@@ -80,7 +80,7 @@ Read [Reliability](https://free-the-ai.github.io/freetheai-js/reliability/) for 
 
 | Guide | |
 | --- | --- |
-| [Getting started](https://free-the-ai.github.io/freetheai-js/getting-started/) | Key, check-in, first request |
+| [Getting started](https://free-the-ai.github.io/freetheai-js/getting-started/) | Key, funds, first request |
 | [Chat and streaming](https://free-the-ai.github.io/freetheai-js/guides/chat/) | Parameters, streaming, reasoning, images |
 | [Tool calls](https://free-the-ai.github.io/freetheai-js/guides/tools/) | Function calling step by step |
 | [Web search](https://free-the-ai.github.io/freetheai-js/guides/web-search/) | Results and sourced answers |
