@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.2 (2026-11-13)
+
+- The package description and docs now describe FreeTheAI as the AI model marketplace it is (the free tier closed on 2026-11-10). No code changes.
+
 ## 0.1.1 (2026-10-10)
 
 - Releases are now published from GitHub Actions with npm trusted publishing and provenance.
