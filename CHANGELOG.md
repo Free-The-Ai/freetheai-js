@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.0 (2026-11-23)
+
+- New `freetheai` command. `npx freetheai init` sets up Claude Code or Codex CLI to use FreeTheAI: it checks your key with the API, backs up the tool's settings, and changes only FreeTheAI's own entries (`--remove` takes them out again). `npx freetheai whoami` shows the key's balance and spend.
+
 ## 0.1.2 (2026-11-13)
 
 - The package description and docs now describe FreeTheAI as the AI model marketplace it is (the free tier closed on 2026-11-10). No code changes.
